@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aroma de Café</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #faf6ef;
+      color: #38271e;
+      text-align: center;
+    }
+
+    header {
+      background: #38271e;
+      color: white;
+      padding: 24px 16px;
+    }
+
+    header h1 {
+      margin: 0 0 8px;
+      font-size: 30px;
+    }
+
+    main {
+      max-width: 650px;
+      margin: 50px auto;
+      padding: 24px;
+    }
+
+    .welcome {
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .menu {
+      display: grid;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    button {
+      padding: 15px;
+      border: none;
+      border-radius: 8px;
+      background: #79553b;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #543925;
+    }
+
+    #answer {
+      margin-top: 24px;
+      padding: 18px;
+      background: white;
+      border-radius: 8px;
+      line-height: 1.7;
+    }
+
+    footer {
+      padding: 20px;
+      background: #38271e;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Aroma de Café</h1>
+    <p>Your cozy place for coffee and delicious food</p>
+  </header>
+
+  <main>
+    <h2>Welcome to Aroma de Café!</h2>
+
+    <p class="welcome">
+      Enjoy delicious food, refreshing drinks,
+      and a warm café experience.
+    </p>
+
+    <h3>How can we help you?</h3>
+
+    <div class="menu">
+      <button onclick="showAnswer('menu')">
+        View Menu
+      </button>
+
+      <button onclick="showAnswer('hours')">
+        Opening Hours
+      </button>
+
+      <button onclick="showAnswer('delivery')">
+        Home Delivery
+      </button>
+    </div>
+
+    <div id="answer" hidden></div>
+  </main>
+
+  <footer>
+    <p>© 2026 Aroma de Café</p>
+  </footer>
+
+  <script>
+    function showAnswer(type) {
+      const answer = document.getElementById("answer");
+
+      const messages = {
+        menu: "Welcome! Please contact Aroma de Café for the latest menu and prices.",
+        hours: "Please contact Aroma de Café to confirm today's opening hours.",
+        delivery: "Home delivery inquiries are welcome! Please contact Aroma de Café to confirm availability."
+      };
+
+      answer.textContent = messages[type];
+      answer.hidden = false;
+    }
+  </script>
+</body>
+</html>
